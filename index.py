@@ -1,9 +1,11 @@
-from flask import Flask, render_template_string
-import os
+#!/usr/bin/env python3
+"""
+Pure Python Website - Secure Sales Representatives LLC
+This is a single Python file that generates a complete HTML website
+"""
 
-app = Flask(__name__)
-
-HTML_TEMPLATE = """
+def generate_html():
+    return f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,37 +13,36 @@ HTML_TEMPLATE = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Sales Representatives LLC</title>
     <style>
-        * {
+        * {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+        }}
         
-        body {
+        body {{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0a0a2e;
             color: #e2e8f0;
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-        }
+        }}
         
-        .section {
+        .section {{
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
-            position: relative;
-        }
+        }}
         
-        .container {
+        .container {{
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-        }
+        }}
         
-        .pill-box {
+        .pill-box {{
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid #374151;
@@ -50,9 +51,9 @@ HTML_TEMPLATE = """
             text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        }}
         
-        .text-box {
+        .text-box {{
             background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             border: 1px solid #374151;
@@ -61,9 +62,9 @@ HTML_TEMPLATE = """
             max-width: 800px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
+        }}
         
-        .column-box {
+        .column-box {{
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid #374151;
@@ -71,40 +72,36 @@ HTML_TEMPLATE = """
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        }}
         
-        h2 {
+        h2 {{
             font-size: 1.5rem;
             font-weight: bold;
             color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
+        }}
         
-        h3 {
+        h3 {{
             font-size: 1.25rem;
             font-weight: bold;
             color: #e2e8f0;
             margin-bottom: 1rem;
-        }
+        }}
         
-        p {
+        p {{
             color: #e2e8f0;
             font-size: 1.1rem;
             line-height: 1.7;
-        }
+        }}
         
-        .nav-container {
+        .nav-container {{
             position: fixed;
             top: 15vh;
             left: 50%;
             transform: translateX(-50%);
             z-index: 50;
-        }
+        }}
         
-        .nav {
+        .nav {{
             display: flex;
             gap: 1rem;
             padding: 0.75rem;
@@ -112,59 +109,59 @@ HTML_TEMPLATE = """
             backdrop-filter: blur(10px);
             border: 1px solid #374151;
             border-radius: 50px;
-        }
+        }}
         
-        .nav a {
+        .nav a {{
             color: #d1d5db;
             text-decoration: none;
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.875rem;
             transition: all 0.3s ease;
-        }
+        }}
         
-        .nav a:hover {
+        .nav a:hover {{
             color: white;
             background: rgba(255, 255, 255, 0.1);
-        }
+        }}
         
-        .grid {
+        .grid {{
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-        }
+        }}
         
-        @media (min-width: 768px) {
-            .grid {
+        @media (min-width: 768px) {{
+            .grid {{
                 grid-template-columns: repeat(3, 1fr);
-            }
-        }
+            }}
+        }}
         
-        .contact-grid {
+        .contact-grid {{
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-        }
+        }}
         
-        @media (min-width: 768px) {
-            .contact-grid {
+        @media (min-width: 768px) {{
+            .contact-grid {{
                 grid-template-columns: repeat(2, 1fr);
-            }
-        }
+            }}
+        }}
         
-        .contact-item {
+        .contact-item {{
             display: flex;
             align-items: center;
             gap: 1rem;
             color: #e2e8f0;
-        }
+        }}
         
-        .icon {
+        .icon {{
             width: 1.5rem;
             height: 1.5rem;
-        }
+        }}
         
-        .btn {
+        .btn {{
             background: #2563eb;
             color: white;
             padding: 0.75rem 1.5rem;
@@ -176,109 +173,109 @@ HTML_TEMPLATE = """
             gap: 0.5rem;
             transition: background 0.3s ease;
             margin-top: 1rem;
-        }
+        }}
         
-        .btn:hover {
+        .btn:hover {{
             background: #1d4ed8;
-        }
+        }}
         
-        .border-bottom {
+        .border-bottom {{
             border-bottom: 1px solid #374151;
             padding-bottom: 1rem;
             margin-bottom: 1rem;
-        }
+        }}
         
-        .text-left {
+        .text-left {{
             text-align: left;
-        }
+        }}
         
-        .text-sm {
+        .text-sm {{
             font-size: 0.875rem;
-        }
+        }}
         
-        .space-y-3 > * + * {
+        .space-y-3 > * + * {{
             margin-top: 0.75rem;
-        }
+        }}
         
-        .space-y-6 > * + * {
+        .space-y-6 > * + * {{
             margin-top: 1.5rem;
-        }
+        }}
         
-        .mb-2 {
+        .mb-2 {{
             margin-bottom: 0.5rem;
-        }
+        }}
         
-        .mb-4 {
+        .mb-4 {{
             margin-bottom: 1rem;
-        }
+        }}
         
-        .mb-6 {
+        .mb-6 {{
             margin-bottom: 1.5rem;
-        }
+        }}
         
-        .mt-2 {
+        .mt-2 {{
             margin-top: 0.5rem;
-        }
+        }}
         
-        .mt-8 {
+        .mt-8 {{
             margin-top: 2rem;
-        }
+        }}
         
-        .px-4 {
+        .px-4 {{
             padding-left: 1rem;
             padding-right: 1rem;
-        }
+        }}
         
-        .max-w-2xl {
+        .max-w-2xl {{
             max-width: 42rem;
-        }
+        }}
         
-        .max-w-md {
+        .max-w-md {{
             max-width: 28rem;
-        }
+        }}
         
-        .w-full {
+        .w-full {{
             width: 100%;
-        }
+        }}
         
-        .flex {
+        .flex {{
             display: flex;
-        }
+        }}
         
-        .flex-col {
+        .flex-col {{
             flex-direction: column;
-        }
+        }}
         
-        .items-center {
+        .items-center {{
             align-items: center;
-        }
+        }}
         
-        .justify-center {
+        .justify-center {{
             justify-content: center;
-        }
+        }}
         
-        .gap-2 {
+        .gap-2 {{
             gap: 0.5rem;
-        }
+        }}
         
-        .text-blue-400 { color: #60a5fa; }
-        .text-green-400 { color: #4ade80; }
-        .text-red-400 { color: #f87171; }
-        .text-pink-500 { color: #ec4899; }
-        .text-purple-400 { color: #c084fc; }
+        .text-blue-400 {{ color: #60a5fa; }}
+        .text-green-400 {{ color: #4ade80; }}
+        .text-red-400 {{ color: #f87171; }}
+        .text-pink-500 {{ color: #ec4899; }}
+        .text-purple-400 {{ color: #c084fc; }}
         
-        a {
+        a {{
             color: inherit;
             transition: color 0.3s ease;
-        }
+        }}
         
-        a:hover {
+        a:hover {{
             color: #93c5fd;
-        }
+        }}
         
-        .underline {
+        .underline {{
             text-decoration: underline;
-        }
+        }}
     </style>
 </head>
 <body>
@@ -500,10 +497,49 @@ HTML_TEMPLATE = """
 </html>
 """
 
-@app.route('/')
-def home():
-    return render_template_string(HTML_TEMPLATE)
+def create_website():
+    """Create the website HTML file"""
+    html_content = generate_html()
+    
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    
+    print("Website generated successfully!")
+    print("Open 'index.html' in your browser to view the website.")
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+def serve_website():
+    """Serve the website using Python's built-in HTTP server"""
+    import http.server
+    import socketserver
+    import webbrowser
+    import os
+    
+    # Create the HTML file
+    create_website()
+    
+    # Change to directory where script is located
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    
+    PORT = 8000
+    Handler = http.server.SimpleHTTPRequestHandler
+    
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print(f"Server running at http://localhost:{PORT}")
+        print("Opening browser automatically...")
+        webbrowser.open(f'http://localhost:{PORT}')
+        print("Press Ctrl+C to stop the server")
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nServer stopped.")
+
+if __name__ == "__main__":
+    # Create website file
+    create_website()
+    
+    # Ask if user wants to serve it
+    response = input("Do you want to start a local server to view the website? (y/n): ")
+    if response.lower() in ['y', 'yes']:
+        serve_website()
+    else:
+        print("Website saved as 'index.html'. Open it in your browser to view.")
