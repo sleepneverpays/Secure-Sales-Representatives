@@ -233,13 +233,10 @@
 }
 
 .carousel-arrows {
-    position: absolute;
-    top: 50%;
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
 }
 
 .arrow {
@@ -275,12 +272,61 @@
     font-size: 0.9rem;
 }
 
+/* Plus bubble styles */
+.plus-bubble-container {
+    position: absolute;
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.plus-bubble-container.visible {
+    opacity: 1;
+}
+
+.and-more-text {
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.plus-bubble {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid #374151;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    color: #60a5fa;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.plus-bubble:hover {
+    background: #60a5fa;
+    color: white;
+    transform: scale(1.1);
+}
+
 /* Added spacing between carousel and next section */
 #projects {
     padding-top: 8rem;
 }
 
-@media (max-width:768px){.side-nav-container{display:none}.header-nav{padding:0.5rem 1rem;flex-wrap:wrap;gap:1rem}.header-logo{width:35px;height:35px}.header-nav nav{gap:0.5rem;flex-wrap:wrap;justify-content:center}.header-nav a{font-size:0.8rem;padding:0.4rem 0.6rem}.section{padding:5rem 1rem 1rem}.contact-logo{width:40px;height:40px}.menu-toggle{width:25px;height:18px}.dropdown-menu a{font-size:1.1rem;padding:0.8rem 1.5rem;min-width:200px}.contact-info{font-size:1rem}.pill-box-wide,.pill-box-medium{max-width:90%!important;margin-left:auto;margin-right:auto}.terms-content{padding:2rem 1.5rem}.terms-title{font-size:1.5rem}.terms-link{font-size:1rem}.carousel-wrapper{padding:1.5rem}.property-image{height:200px}.property-price{font-size:1.5rem}.property-address{font-size:1rem}.property-features{flex-wrap:wrap;gap:10px}.arrow{width:40px;height:40px}#projects{padding-top:6rem}}@media (max-width:480px){.header-nav{flex-direction:row;gap:0.5rem;padding:0.5rem}.header-nav nav{gap:0.25rem}.header-nav a{font-size:0.7rem;padding:0.3rem 0.5rem}.pill-box-wide,.pill-box-medium,.text-box,.text-box-wide{padding:1rem;max-width:95%!important}.text-box-wide .grid{grid-template-columns:1fr}.dropdown-menu a{font-size:1rem;padding:0.7rem 1.2rem;min-width:180px}.contact-info{font-size:0.9rem;padding:0.8rem 1.2rem}.close-menu{top:1rem;right:1rem}h2{font-size:1.3rem;flex-wrap:wrap;text-align:center}.contact-grid{grid-template-columns:1fr}.contact-item{justify-content:center}.terms-content{padding:1.5rem 1rem}.terms-title{font-size:1.3rem}.terms-link{font-size:0.95rem}.carousel-wrapper{padding:1rem}.property-image{height:180px}.property-features{flex-direction:column;gap:5px}.property-description{font-size:0.9rem}#projects{padding-top:4rem}}
+@media (max-width:768px){.side-nav-container{display:none}.header-nav{padding:0.5rem 1rem;flex-wrap:wrap;gap:1rem}.header-logo{width:35px;height:35px}.header-nav nav{gap:0.5rem;flex-wrap:wrap;justify-content:center}.header-nav a{font-size:0.8rem;padding:0.4rem 0.6rem}.section{padding:5rem 1rem 1rem}.contact-logo{width:40px;height:40px}.menu-toggle{width:25px;height:18px}.dropdown-menu a{font-size:1.1rem;padding:0.8rem 1.5rem;min-width:200px}.contact-info{font-size:1rem}.pill-box-wide,.pill-box-medium{max-width:90%!important;margin-left:auto;margin-right:auto}.terms-content{padding:2rem 1.5rem}.terms-title{font-size:1.5rem}.terms-link{font-size:1rem}.carousel-wrapper{padding:1.5rem}.property-image{height:200px}.property-price{font-size:1.5rem}.property-address{font-size:1rem}.property-features{flex-wrap:wrap;gap:10px}.arrow{width:40px;height:40px}#projects{padding-top:6rem}.plus-bubble-container{right:-60px}.plus-bubble{width:50px;height:50px;font-size:1.5rem}.and-more-text{font-size:0.9rem}}@media (max-width:480px){.header-nav{flex-direction:row;gap:0.5rem;padding:0.5rem}.header-nav nav{gap:0.25rem}.header-nav a{font-size:0.7rem;padding:0.3rem 0.5rem}.pill-box-wide,.pill-box-medium,.text-box,.text-box-wide{padding:1rem;max-width:95%!important}.text-box-wide .grid{grid-template-columns:1fr}.dropdown-menu a{font-size:1rem;padding:0.7rem 1.2rem;min-width:180px}.contact-info{font-size:0.9rem;padding:0.8rem 1.2rem}.close-menu{top:1rem;right:1rem}h2{font-size:1.3rem;flex-wrap:wrap;text-align:center}.contact-grid{grid-template-columns:1fr}.contact-item{justify-content:center}.terms-content{padding:1.5rem 1rem}.terms-title{font-size:1.3rem}.terms-link{font-size:0.95rem}.carousel-wrapper{padding:1rem}.property-image{height:180px}.property-features{flex-direction:column;gap:5px}.property-description{font-size:0.9rem}#projects{padding-top:4rem}.plus-bubble-container{right:-50px}.plus-bubble{width:45px;height:45px;font-size:1.3rem}.and-more-text{font-size:0.8rem}}
     </style>
 </head>
 <body>
@@ -554,13 +600,13 @@
                         </div>
                     </div>
                     
-                    <div class="carousel-arrows">
-                        <div class="arrow prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </div>
-                        <div class="arrow next">
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
+                    <!-- Plus bubble container -->
+                    <div class="plus-bubble-container" id="plusBubble">
+                        <div class="and-more-text">And More!</div>
+                        <a href="https://www.zillow.com/homes/for_sale/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22isMapVisible%22%3Atrue%2C%22mapBounds%22%3A%7B%22west%22%3A-85.51389837879242%2C%22east%22%3A-84.73936224597992%2C%22south%22%3A39.81435520496264%2C%22north%22%3A40.23290480728236%7D%2C%22mapZoom%22%3A11%2C%22usersSearchTerm%22%3A%22%22%2C%22filterState%22%3A%7B%22sort%22%3A%7B%22value%22%3A%22days%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22price%22%3A%7B%22min%22%3A0%2C%22max%22%3Anull%7D%2C%2255plus%22%3A%7B%22value%22%3A%22e%22%7D%7D%2C%22isListVisible%22%3Atrue%7D" 
+                           target="_blank" class="plus-bubble">
+                            +
+                        </a>
                     </div>
                     
                     <div class="carousel-nav">
@@ -573,8 +619,13 @@
                         </div>
                     </div>
                     
-                    <div class="last-updated">
-                        Last updated: <span id="update-time">Just now</span>
+                    <div class="carousel-arrows">
+                        <div class="arrow prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="arrow next">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -765,16 +816,10 @@
             const dots = document.querySelectorAll('.dot');
             const prevBtn = document.querySelector('.prev');
             const nextBtn = document.querySelector('.next');
-            const updateTime = document.getElementById('update-time');
+            const plusBubble = document.getElementById('plusBubble');
             
             let currentIndex = 0;
             const totalSlides = propertyCards.length;
-            
-            // Update the last updated time
-            function updateTimeDisplay() {
-                const now = new Date();
-                updateTime.textContent = now.toLocaleString();
-            }
             
             // Function to update carousel position
             function updateCarousel() {
@@ -788,6 +833,13 @@
                         dot.classList.remove('active');
                     }
                 });
+                
+                // Show plus bubble only on the 5th slide
+                if (currentIndex === 4) {
+                    plusBubble.classList.add('visible');
+                } else {
+                    plusBubble.classList.remove('visible');
+                }
             }
             
             // Next button click
@@ -816,13 +868,8 @@
                 updateCarousel();
             }, 7000);
             
-            // Initialize time display
-            updateTimeDisplay();
-            
-            // Simulate data update every 30 seconds
-            setInterval(function() {
-                updateTimeDisplay();
-            }, 30000);
+            // Initialize carousel
+            updateCarousel();
         });
     </script>
 </body>
